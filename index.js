@@ -1,7 +1,7 @@
 // Aguarda o DOM carregar completamente
 document.addEventListener('DOMContentLoaded', () => {
     // Nome exato do arquivo dentro da pasta /emulator/roms/
-    const romName = 'seu_jogo.smc'; 
+    const romName = 'Top Gear.smc'; 
     
     // Configuração básica do EmulatorJS
     const EJS_player = document.getElementById('emulator-container');
