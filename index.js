@@ -13,17 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
             gameUrl: `emulator/roms/${romName}`,
             core: 'snes',
             startOnLoad: true,
-            dataPath: 'emulator/emulatorjs/data/'
+            dataPath: 'emulator/emulator1js/data/'
         });
     } else if (typeof EmulatorJS !== 'undefined') {
         new EmulatorJS('#emulator-container', {
             gameUrl: `emulator/roms/${romName}`,
             core: 'snes',
             startOnLoad: true,
-            dataPath: 'emulator/emulatorjs/data/'
+            dataPath: 'emulator/emulator1js/data/'
         });
     } else {
         console.error('EmulatorJS não carregou. Verifique os caminhos.');
-        container.innerHTML = '<p style="color:white; padding:20px;">Erro: Emulador não carregou. Verifique se os arquivos estão no caminho correto: emulator/emulatorjs/data/</p>';
+        container.innerHTML = '<p style="color:white; padding:20px;">Erro: Emulador não carregou. Verifique se os arquivos estão no caminho correto: emulator/emulator1js/data/</p>';
     }
 });
