@@ -1,8 +1,7 @@
-// Configuração para usar a CDN oficial do EmulatorJS
 window.EJS_core = 'snes9x';
-window.EJS_gameUrl = 'emulatorjs/roms/Top Gear.smc';
+window.EJS_gameUrl = 'emulatorjs/roms/TopGear.smc';
 window.EJS_player = '#emulator-container';
-window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';  // ← CDN oficial!
+window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
 window.EJS_startOnLoaded = true;
 
 document.addEventListener('DOMContentLoaded', () => {
