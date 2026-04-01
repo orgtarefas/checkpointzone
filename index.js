@@ -1,5 +1,5 @@
 window.EJS_core = 'snes9x';
-window.EJS_gameUrl = 'emulatorjs/roms/TopGear.smc';
+window.EJS_gameUrl = 'emulator/roms/TopGear.smc';
 window.EJS_player = '#emulator-container';
 window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
 window.EJS_startOnLoaded = true;
