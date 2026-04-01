@@ -1,22 +1,27 @@
-// Aguarda o DOM carregar completamente
 document.addEventListener('DOMContentLoaded', () => {
-    // Nome exato do arquivo dentro da pasta /emulator/roms/
-    const romName = 'Top Gear.smc'; 
+    const romName = 'Top Gear.smc';
     
-    // Configuração básica do EmulatorJS
-    const EJS_player = document.getElementById('emulator-container');
-    const EJS_core = 'snes'; // Define o núcleo do Super Nintendo
-    const EJS_gameUrl = `emulator/roms/${romName}`; // Caminho relativo para a ROM
-    
-    // Inicializa o emulador (baseado na API padrão do EmulatorJS)
-    if (typeof EmulatorJS !== 'undefined') {
-        new EmulatorJS(EJS_player, {
-            gameUrl: EJS_gameUrl,
-            core: EJS_core,
-            startOnLoad: true, // Inicia automaticamente
-            dataPath: 'emulator/emulatorjs/data/' // Caminho para os assets do emulador
+    // Verifica se o EmulatorJS foi carregado
+    if (typeof EJS !== 'undefined') {
+        // A API do EmulatorJS usa a variável global EJS
+        const emulator = new EJS({
+            player: document.getElementById('emulator-container'),
+            gameUrl: `emulator/roms/${romName}`,
+            core: 'snes',
+            startOnLoad: true,
+            dataPath: 'emulator/emulatorjs/data/'
+        });
+    } else if (typeof EmulatorJS !== 'undefined') {
+        // Fallback para versões mais antigas
+        new EmulatorJS(document.getElementById('emulator-container'), {
+            gameUrl: `emulator/roms/${romName}`,
+            core: 'snes',
+            startOnLoad: true,
+            dataPath: 'emulator/emulatorjs/data/'
         });
     } else {
-        console.error('EmulatorJS não carregou corretamente. Verifique os caminhos.');
+        console.error('EmulatorJS não carregou. Verifique os caminhos.');
+        document.getElementById('emulator-container').innerHTML = 
+            '<p style="color:white;">Erro: Emulador não carregou. Verifique os arquivos.</p>';
     }
 });
